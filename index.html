@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <!-- Google Analytics Tracking Code -->
+    <!-- Google Analytics Tracking Code -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M4583LF5D"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,10 +12,10 @@
         gtag('config', 'G-0M4583LF5D');
         
         // Function to track user events
-        function trackEvent(section) {
-            gtag('event', 'Section_Selected', {
-                'event_category': 'Navigation',
-                'event_label': section
+        function trackEvent(eventCategory, eventAction, eventLabel) {
+            gtag('event', eventAction, {
+                'event_category': eventCategory,
+                'event_label': eventLabel
             });
         }
     </script>
@@ -30,9 +30,12 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home" onclick="trackEvent('Home')">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#purchase">Purchase</a></li>
+                <li><a href="#home" onclick="trackEvent('Navigation', 'Section_Selected', 'Home')">Home</a></li>
+                <li><a href="#services" onclick="trackEvent('Navigation', 'Section_Selected', 'Services')">Services</a></li>
+                <li><a href="#purchase" onclick="trackEvent('Navigation', 'Section_Selected', 'Purchase')">Purchase</a></li>
+                <!-- Add more event tracking here -->
+                <li><a href="#contact" onclick="trackEvent('Navigation', 'Section_Selected', 'Contact')">Contact</a></li>
+                <li><a href="#about" onclick="trackEvent('Navigation', 'Section_Selected', 'About')">About</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +53,19 @@
     <section id="purchase">
         <h2>Purchase Now</h2>
         <!-- Your Purchase Section Content -->
+        <!-- Add a "Purchase" button with event tracking -->
+        <button onclick="trackEvent('Purchase', 'Button_Click', 'Purchase_Button_Clicked')">Purchase Now</button>
     </section>
-  
+
+    <!-- Additional sections to track -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!-- Your Contact Section Content -->
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <!-- Your About Section Content -->
+    </section>
 </body>
 </html>
