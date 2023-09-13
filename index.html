@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+          <!-- Google Analytics Tracking Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M4583LF5D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-0M4583LF5D');
+        
+        // Function to track user events
+        function trackEvent(section) {
+            gtag('event', 'Section_Selected', {
+                'event_category': 'Navigation',
+                'event_label': section
+            });
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Landing Page</title>
@@ -33,23 +51,6 @@
         <h2>Purchase Now</h2>
         <!-- Your Purchase Section Content -->
     </section>
-        <!-- Google Analytics Tracking Code -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M4583LF5D"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-0M4583LF5D');
-        
-        // Function to track user events
-        function trackEvent(section) {
-            gtag('event', 'Section_Selected', {
-                'event_category': 'Navigation',
-                'event_label': section
-            });
-        }
-    </script>
+  
 </body>
 </html>
