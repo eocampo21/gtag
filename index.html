@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="trackEvent('Home')">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#purchase">Purchase</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to My Landing Page</h1>
+        <!-- Your Home Section Content -->
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <!-- Your Services Section Content -->
+    </section>
+
+    <section id="purchase">
+        <h2>Purchase Now</h2>
+        <!-- Your Purchase Section Content -->
+    </section>
+        <!-- Google Analytics Tracking Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M4583LF5D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-0M4583LF5D');
+        
+        // Function to track user events
+        function trackEvent(section) {
+            gtag('event', 'Section_Selected', {
+                'event_category': 'Navigation',
+                'event_label': section
+            });
+        }
+    </script>
+</body>
+</html>
